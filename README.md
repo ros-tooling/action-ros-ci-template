@@ -7,7 +7,7 @@ With this action, you can immediately get linting and tests feedback.
 Minimize the number of builds you need to kickoff and catch bugs earlier!
 
 For more information on using GitHub action workflows, see the
-[Official GitHub Workflow Documentation](gh-action-doc).
+[Official GitHub Workflow Documentation].
 
 ## Usage
 
@@ -15,7 +15,7 @@ Click on the green `Use this Template` to create your new repository.
 
 ### Linting
 
-This action supports the linters in the [ament/ament_lint][ament-lint-repo].
+This action supports the linters in the [ament/ament_lint].
 Linter names are based off of ament's naming convention `ament_<linter-name>`.
 For example, to use `ament_uncrustify`, set `uncrustify` as your linter.
 
@@ -56,10 +56,10 @@ ament_lint_cpp:
         package-name: <your-package-name>
 ```
 
-See [`.github/workflows/lint.yml`](.github/workflows/lint.yml) for an
-example linting workflow.
+See [`.github/workflows/lint.yml`] for an example linting workflow.
 
 **Note:** The only unsupported linter at this time is CMake.
 
-[gh-action-doc]: https://help.github.com/en/actions/automating-your-workflow-with-github-actions/workflow-syntax-for-github-actions
-[ament-lint-repo]: https://github.com/ament/ament_lint/tree/eloquent
+[Official GitHub Workflow Documentation]: https://help.github.com/en/actions/automating-your-workflow-with-github-actions/workflow-syntax-for-github-actions
+[ament/ament_lint]: https://github.com/ament/ament_lint/tree/eloquent
+[`.github/workflows/lint.yml`]: .github/workflows/lint.yml

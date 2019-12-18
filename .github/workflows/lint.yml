@@ -11,7 +11,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        linter: [copyright, cppcheck, cpplint, uncrustify, xmllint]
+        linter: [cppcheck, cpplint, uncrustify, xmllint]
     steps:
       - uses: actions/checkout@v1
       - uses: ros-tooling/setup-ros2@0.0.11
