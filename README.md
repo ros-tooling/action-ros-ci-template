@@ -15,7 +15,7 @@ Click on the green `Use this Template` to create your new repository.
 
 ### Linting
 
-This action supports the linters in the [ament/ament_lint].
+This action supports the linters in the [ament/ament_lint] repo.
 Linter names are based off of ament's naming convention `ament_<linter-name>`.
 For example, to use `ament_uncrustify`, set `uncrustify` as your linter.
 
@@ -49,7 +49,7 @@ ament_lint_cpp:
       linter: [cppcheck, cpplint, uncrustify]
     steps:
     - uses: actions/checkout@v1
-    - uses: ros-tooling/setup-ros2@0.0.7
+    - uses: ros-tooling/setup-ros2@0.0.11
     - uses: ros-tooling/action-ros2-lint@0.0.5
       with:
         linter: ${{ matrix.linter }}
