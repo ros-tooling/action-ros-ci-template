@@ -1,0 +1,21 @@
+name: Lint ROS2 package
+on:
+  # Run this action whenever a pull request is made
+  pull_request:
+
+jobs:
+  # Note that we pass each job a different name to distinguish each linter job
+  ament_lint_cpp:
+    name: ament_${{ matrix.linter }}
+    runs-on: ubuntu-18.04
+    strategy:
+      fail-fast: false
+      matrix:
+        linter: [cppcheck, cpplint, uncrustify, xmllint]
+    steps:
+      - uses: actions/checkout@v1
+      - uses: ros-tooling/setup-ros2@0.0.11
+      - uses: ros-tooling/action-ros2-lint@0.0.5
+        with:
+          linter: ${{ matrix.linter }}
+          package-name: cpp_template_pkg
