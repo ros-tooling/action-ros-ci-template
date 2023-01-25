@@ -44,7 +44,7 @@ ament_lint_cpp:
   runs-on: ubuntu-latest
   strategy:
     # We want all linters to run even if one fails
-    fail-fast: false 
+    fail-fast: false
     matrix:
       linter: [cppcheck, cpplint, uncrustify]
     steps:
