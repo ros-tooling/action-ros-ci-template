@@ -1,6 +1,6 @@
-# ROS2 GitHub Action CI Template
+# ROS 2 GitHub Action CI Template
 
-Use this template to create a ROS2 package repository with automatic CI.
+Use this template to create a ROS 2 package repository with automatic CI.
 
 Waiting for a buildfarmer to kickoff a build for your PR is time consuming.
 With this action, you can immediately get linting and tests feedback.
@@ -24,11 +24,11 @@ An example job for `copyright` linting.
 ```yaml
 ament_copyright:
   name: ament_copyright
-  runs-on: ubuntu-18.04
+  runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - uses: ros-tooling/setup-ros2@0.0.11
-    - uses: ros-tooling/action-ros2-lint@0.0.5
+    - uses: actions/checkout@v3
+    - uses: ros-tooling/setup-ros@v0.5
+    - uses: ros-tooling/action-ros-lint@v0.1
       with:
         linter: copyright
         package-name: <your-package-name>
@@ -41,16 +41,16 @@ For multiple linters, use a `matrix`:
 ament_lint_cpp:
   # Give each job a different name for better feedback
   name: ament_${{ matrix.linter }}
-  runs-on: ubuntu-18.04
+  runs-on: ubuntu-latest
   strategy:
     # We want all linters to run even if one fails
     fail-fast: false 
     matrix:
       linter: [cppcheck, cpplint, uncrustify]
     steps:
-    - uses: actions/checkout@v1
-    - uses: ros-tooling/setup-ros2@0.0.11
-    - uses: ros-tooling/action-ros2-lint@0.0.5
+    - uses: actions/checkout@v3
+    - uses: ros-tooling/setup-ros@v0.5
+    - uses: ros-tooling/action-ros-lint@v0.1
       with:
         linter: ${{ matrix.linter }}
         package-name: <your-package-name>
