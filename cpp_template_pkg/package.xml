@@ -3,7 +3,7 @@
 <package format="3">
   <name>cpp_template_pkg</name>
   <version>0.0.0</version>
-  <description>A template package used to demonstrate ROS2 GitHub Actions</description>
+  <description>A template package used to demonstrate ROS 2 GitHub Actions</description>
   <maintainer email="foo@bar.baz">Foobar</maintainer>
   <license>Apache 2.0</license>
 
