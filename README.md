@@ -27,7 +27,7 @@ ament_copyright:
   runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: ros-tooling/setup-ros@v0.5
+    - uses: ros-tooling/setup-ros@v0.6
     - uses: ros-tooling/action-ros-lint@v0.1
       with:
         linter: copyright
@@ -49,7 +49,7 @@ ament_lint_cpp:
       linter: [cppcheck, cpplint, uncrustify]
     steps:
     - uses: actions/checkout@v3
-    - uses: ros-tooling/setup-ros@v0.5
+    - uses: ros-tooling/setup-ros@v0.6
     - uses: ros-tooling/action-ros-lint@v0.1
       with:
         linter: ${{ matrix.linter }}
